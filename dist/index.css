@@ -1,0 +1,2 @@
+.st-tree-table .st-tree-table__icon{background-color:#eee;cursor:pointer;display:inline-block;line-height:1.5em;margin:.1em;text-align:center;text-decoration:none;width:1.5em}.st-tree-table :not(.st-tree-table__node--closed) .st-tree-table__icon:after{content:"-"}.st-tree-table .st-tree-table__node--closed .st-tree-table__icon:after{content:"+"}.st-tree-table .st-tree-table__node--leaf .st-tree-table__icon{visibility:hidden}.st-tree-table .st-tree-table__node--hidden{display:none!important}
+/*# sourceMappingURL=index.css.map */

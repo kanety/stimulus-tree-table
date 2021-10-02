@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script type="importmap">
+    {
+      "imports": {
+        "@hotwired/stimulus": "/node_modules/@hotwired/stimulus/dist/stimulus.js",
+        "@kanety/stimulus-static-actions": "/node_modules/@kanety/stimulus-static-actions/dist/index.module.js",
+        "@kanety/stimulus-tree-table": "/dist/index.module.js"
+      }
+    }
+  </script>
+  <script type="module">
+    import { Application, Controller } from '@hotwired/stimulus';
+    import '@kanety/stimulus-static-actions';
+    import TreeTableController from '@kanety/stimulus-tree-table';
+    const application = Application.start();
+    application.register('tree-table', TreeTableController);
+  </script>
+  <link rel="stylesheet" href="/dist/index.css"></link>
+</head>
+<body>
+  <h1>Basic Table</h1>
+  <button type="button" value="expand">Expand</button>
+  <button type="button" value="collapse">Collapse</button>
+  <table border="1" class="st-tree-table" data-controller="tree-table">
+    <tr data-node-id="1">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 0px;"></a>
+        <a href="#">1</a>
+      </td>
+      <td>text of 1</td>
+    </tr>
+    <tr data-node-id="1.1" data-node-pid="1">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 20px;"></a>
+        <a href="#">1.1</a>
+      </td>
+      <td>text of 1.1</td>
+    </tr>
+    <tr data-node-id="1.1.1" data-node-pid="1.1">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 40px;"></a>
+        <a href="#">1.1.1</a>
+      </td>
+      <td>text of 1.1.1</td>
+    </tr>
+    <tr data-node-id="1.1.2" data-node-pid="1.1">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 40px;"></a>
+        <a href="#">1.1.2</a>
+      </td>
+      <td>text of 1.1.2</td>
+    </tr>
+    <tr data-node-id="1.2" data-node-pid="1">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 20px;"></a>
+        <a href="#">1.2</a>
+      </td>
+      <td>text of 1.2</td>
+    </tr>
+    <tr data-node-id="1.2.1" data-node-pid="1.2">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 40px;"></a>
+        <a href="#">1.2.1</a>
+      </td>
+      <td>text of 1.2.1</td>
+    </tr>
+    <tr data-node-id="1.2.2" data-node-pid="1.2">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 40px;"></a>
+        <a href="#">1.2.2</a>
+      </td>
+      <td>text of 1.2.2</td>
+    </tr>
+    <tr data-node-id="2">
+      <td>
+        <a href="#icon" class="st-tree-table__icon"></a>
+        <a href="#">2</a>
+      </td>
+      <td>text of 2</td>
+    </tr>
+    <tr data-node-id="2.1" data-node-pid="2">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 20px;"></a>
+        <a href="#">2.1</a>
+      </td>
+      <td>text of 2.1</td>
+    </tr>
+    <tr data-node-id="2.2" data-node-pid="2">
+      <td>
+        <a href="#icon" class="st-tree-table__icon" style="margin-left: 20px;"></a>
+        <a href="#">2.2</a>
+      </td>
+      <td>text of 2.2</td>
+    </tr>
+  </table>
+  <script>
+    let element = document.querySelector('table');
+    document.querySelector('button[value="expand"]').addEventListener('click', e => {
+      element.dispatchEvent(new CustomEvent('tree-table:expand'));
+    });
+    document.querySelector('button[value="collapse"]').addEventListener('click', e => {
+      element.dispatchEvent(new CustomEvent('tree-table:collapse'));
+    });
+  </script>
+</body>
+</html>

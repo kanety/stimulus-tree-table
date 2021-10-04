@@ -8,8 +8,8 @@ export default class extends Controller {
   };
   static actions = [
     ['element', 'click->toggle'],
-    ['element', 'tree-table:expand->expand'],
-    ['element', 'tree-table:collapse->collapse']
+    ['element', ':expand->expand'],
+    ['element', ':collapse->collapse']
   ];
 
   get nodes() {

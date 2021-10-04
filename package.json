@@ -27,7 +27,7 @@
   "amdName": "StimulusTreeTable",
   "dependencies": {
     "@hotwired/stimulus": "^3.0.0",
-    "@kanety/stimulus-static-actions": "^1.0.0"
+    "@kanety/stimulus-static-actions": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

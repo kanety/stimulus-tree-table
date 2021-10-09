@@ -13,11 +13,11 @@ export default class extends Controller {
   ];
 
   get nodes() {
-    return Array.from(this.element.querySelectorAll('tr[data-node-id]'));
+    return this.scope.findAllElements('tr[data-node-id]');
   }
 
   get openedNodes() {
-    return Array.from(this.element.querySelectorAll('tr[data-node-id]:not(.st-tree-table__node--closed)'));
+    return this.scope.findAllElements('tr[data-node-id]:not(.st-tree-table__node--closed)');
   }
 
   connect() {
@@ -118,7 +118,7 @@ export default class extends Controller {
 
   children(node) {
     let id = node.getAttribute('data-node-id');
-    return Array.from(this.element.querySelectorAll(`tr[data-node-pid="${id}"]`));
+    return this.scope.findAllElements(`tr[data-node-pid="${id}"]`);
   }
 
   loadStates() {

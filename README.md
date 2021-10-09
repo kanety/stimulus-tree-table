@@ -1,6 +1,6 @@
 # stimulus-tree-table
 
-A stimulus controller that attaches tree-like behaviour to table.
+A stimulus controller that attaches tree-like behavior to table.
 
 ## Dependencies
 
@@ -73,13 +73,13 @@ Save node state to `sessionStorage`:
 
 ```html
 <table data-controller="tree-table"
-       data-tree-store-key-value="YOUR_KEY">
+       data-tree-table-store-key-value="YOUR_KEY">
 </table>
 ```
 
 ### Callbacks
 
-Set callbacks running when a node is opened or closed:
+Run callbacks when a node is opened or closed:
 
 ```javascript
 let element = document.querySelector('[data-controller="tree-table"]');

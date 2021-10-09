@@ -1,6 +1,6 @@
 {
   "name": "@kanety/stimulus-tree-table",
-  "description": "A stimulus controller that attaches tree-like behaviour to table",
+  "description": "A stimulus controller that attaches tree-like behavior to table",
   "version": "1.0.0",
   "source": "src/index.js",
   "main": "./dist/index.js",

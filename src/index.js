@@ -5,6 +5,7 @@ import './index.scss';
 
 export default class extends Controller {
   static values = {
+    marginLeft: { type: Number, default: 20 },
     storeKey: String
   };
   static actions = [
@@ -29,6 +30,10 @@ export default class extends Controller {
 
   init() {
     this.nodes.forEach(node => {
+      let icon = node.querySelector('a[href="#icon"]');
+      if (icon && !icon.style.marginLeft && this.marginLeftValue) {
+        icon.style.marginLeft = (this.depth(node) - 1) * this.marginLeftValue + 'px';
+      }
       if (!this.hasChildren(node)) {
         node.classList.add('st-tree-table__node--leaf', 'st-tree-table__node--closed')
       }
@@ -103,12 +108,26 @@ export default class extends Controller {
     });
   }
 
-  hasChildren(node) {
-    return this.children(node).length != 0;
+  parent(node) {
+    let pid = node.getAttribute('data-node-pid');
+    return this.scope.findElement(`tr[data-node-id="${pid}"]`);
   }
 
   children(node) {
     let id = node.getAttribute('data-node-id');
     return this.scope.findAllElements(`tr[data-node-pid="${id}"]`);
+  }
+
+  hasChildren(node) {
+    return this.children(node).length != 0;
+  }
+
+  depth(node) {
+    let parent = this.parent(node);
+    if (parent) {
+      return this.depth(parent) + 1;
+    } else {
+      return 1;
+    }
   }
 }

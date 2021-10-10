@@ -67,6 +67,16 @@ Build html with `data-node-id` and `data-node-pid` as follows:
 
 ### Options
 
+#### margin-left
+
+Set base `margin-left` of icon (default: 20).
+
+```html
+<table data-controller="tree-table"
+       data-tree-table-margin-left-value="10">
+</table>
+```
+
 #### store-key
 
 Save node state to `sessionStorage`:

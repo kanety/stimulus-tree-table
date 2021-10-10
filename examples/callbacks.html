@@ -13,9 +13,9 @@
   </script>
   <script type="module">
     import { Application, Controller } from '@hotwired/stimulus';
-    import TreeController from '@kanety/stimulus-tree-table';
+    import TreeTableController from '@kanety/stimulus-tree-table';
     const application = Application.start();
-    application.register('tree-table', TreeController);
+    application.register('tree-table', TreeTableController);
   </script>
   <link rel="stylesheet" href="/dist/index.css"></link>
 </head>
@@ -23,19 +23,19 @@
   <h1>Callbacks</h1>
   <table border="1" class="st-tree-table" data-controller="tree-table">
     <tr data-node-id="1">
-      <td><a href="#icon" class="st-tree-table__icon" style="margin-left: 0px;"></a>1</td>
+      <td><a href="#icon" class="st-tree-table__icon"></a>1</td>
       <td>text of 1</td>
     </tr>
     <tr data-node-id="1.1" data-node-pid="1">
-      <td><a href="#icon" class="st-tree-table__icon" style="margin-left: 20px;"></a>1.1</td>
+      <td><a href="#icon" class="st-tree-table__icon" ></a>1.1</td>
       <td>text of 1.1</td>
     </tr>
     <tr data-node-id="1.1.1" data-node-pid="1.1">
-      <td><a href="#icon" class="st-tree-table__icon" style="margin-left: 40px;"></a>1.1.1</td>
+      <td><a href="#icon" class="st-tree-table__icon"></a>1.1.1</td>
       <td>text of 1.1.1</td>
     </tr>
     <tr data-node-id="1.2" data-node-pid="1">
-      <td><a href="#icon" class="st-tree-table__icon" style="margin-left: 20px;"></a>1.2</td>
+      <td><a href="#icon" class="st-tree-table__icon"></a>1.2</td>
       <td>text of 1.2</td>
     </tr>
   </table>

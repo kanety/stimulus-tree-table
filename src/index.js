@@ -32,6 +32,9 @@ export default class extends Controller {
       if (!this.hasChildren(node)) {
         node.classList.add('st-tree-table__node--leaf', 'st-tree-table__node--closed')
       }
+      if (node.matches('.st-tree-table__node--closed')) {
+        this.hide(node);
+      }
     });
   }
 

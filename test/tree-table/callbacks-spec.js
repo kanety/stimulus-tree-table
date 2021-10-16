@@ -1,9 +1,3 @@
-import { Application } from '@hotwired/stimulus';
-import TreeTableController from 'index';
-
-const application = Application.start();
-application.register('tree-table', TreeTableController);
-
 describe('callbacks', () => {
   beforeEach(() => {
     document.body.innerHTML = `

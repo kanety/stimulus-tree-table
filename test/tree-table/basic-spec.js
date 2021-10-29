@@ -1,4 +1,4 @@
-describe('index', () => {
+describe('basic', () => {
   beforeEach(() => {
     document.body.innerHTML = `
       <table data-controller="tree-table">

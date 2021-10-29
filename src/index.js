@@ -9,9 +9,7 @@ export default class extends Controller {
     storeKey: String
   };
   static actions = [
-    ['element', 'click->toggle'],
-    ['element', ':expand->expand'],
-    ['element', ':collapse->collapse']
+    ['element', 'click->toggle']
   ];
 
   get nodes() {

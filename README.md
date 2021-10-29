@@ -107,6 +107,12 @@ element.addEventListener('tree-table:closed', (e) => {
 
 Expand or collapse tree nodes:
 
+```html
+<table data-controller="tree-table"
+       data-action="tree-table:expand->tree-table#expand tree-table:collapse->tree-table#collapse">
+</table>
+```
+
 ```javascript
 let element = document.querySelector('[data-controller="tree-table"]');
 element.dispatchEvent(new CustomEvent('tree-table:expand'));

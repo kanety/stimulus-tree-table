@@ -23,7 +23,9 @@
   <h1>Basic Table</h1>
   <button type="button" value="expand">Expand</button>
   <button type="button" value="collapse">Collapse</button>
-  <table border="1" class="st-tree-table" data-controller="tree-table">
+  <table border="1" class="st-tree-table"
+         data-controller="tree-table"
+         data-action="tree-table:expand->tree-table#expand tree-table:collapse->tree-table#collapse">
     <tr data-node-id="1">
       <td><a href="#icon" class="st-tree-table__icon"></a>1</td>
       <td>text of 1</td>

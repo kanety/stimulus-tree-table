@@ -1,7 +1,8 @@
 describe('expand', () => {
   beforeEach(() => {
     document.body.innerHTML = `
-      <table data-controller="tree-table">
+      <table data-controller="tree-table"
+             data-action="tree-table:expand->tree-table#expand tree-table:collapse->tree-table#collapse">
         <tr data-node-id="1">
           <td>
             <a href="#icon"></a>

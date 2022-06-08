@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3
+
+* Add preventDefault to exapnd and collapse.
+
 ## 1.0.2
 
 * Exclude expand and collapse from default actions.

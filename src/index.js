@@ -57,11 +57,13 @@ export default class extends Controller {
   expand(e) {
     this.nodes.forEach(node => this.show(node));
     this.store.save();
+    e.preventDefault();
   }
 
   collapse(e) {
     this.nodes.forEach(node => this.hide(node));
     this.store.save();
+    e.preventDefault();
   }
 
   open(node) {

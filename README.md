@@ -4,7 +4,7 @@ A stimulus controller that attaches tree-like behavior to table.
 
 ## Dependencies
 
-* @hotwired/stimulus 3.0
+* @hotwired/stimulus 3.0+
 
 ## Installation
 
